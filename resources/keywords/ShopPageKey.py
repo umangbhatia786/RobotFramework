@@ -20,4 +20,4 @@ class ShopPageKey:
                 xpath_string = f"xpath:(//*[@class='card-footer'])[{index}]/button"
                 self.seleniumLib.click_button(xpath_string)
             index += 1
-        self.seleniumLib.click_element('xpath://*[@id="navbarResponsive"]/ul/li/a')
+        self.seleniumLib.click_element('css:li.active a')

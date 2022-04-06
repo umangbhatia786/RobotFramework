@@ -1,6 +1,9 @@
 *** Settings ***
 Documentation    All the page objects and keywords for Shop Page
 Library  Selenium2Library
+Library     BuiltIn
+Library     Collections
+Library     String
 
 *** Variables ***
 
