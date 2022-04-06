@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.9 on darwin)" generated="20220406 13:01:40.654" rpa="false" schemaversion="3">
+<suite id="s1" name="UdemyRF" source="/Users/ubhatia/PycharmProjects/UdemyRF">
+<suite id="s1-s1" name="Tests" source="/Users/ubhatia/PycharmProjects/UdemyRF/tests">
+<suite id="s1-s1-s1" name="testDemo3" source="/Users/ubhatia/PycharmProjects/UdemyRF/tests/testDemo3.robot">
+<test id="s1-s1-s1-t1" name="Validate window switch" line="13">
+<kw name="open the browser with Mortage Payment URL" library="generic" type="SETUP">
+<kw name="Create Webdriver" library="Selenium2Library">
+<arg>${BROWSER}</arg>
+<arg>executable_path=/Users/ubhatia/PycharmProjects/UdemyRF/resources/drivers/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 13:01:41.137" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 13:01:41.136" endtime="20220406 13:01:46.802"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 13:01:46.805" level="INFO">Opening url 'https://www.rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20220406 13:01:46.803" endtime="20220406 13:01:50.008"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 13:01:50.008" endtime="20220406 13:01:50.270"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220406 13:01:50.271" endtime="20220406 13:01:50.274"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:41.136" endtime="20220406 13:01:50.274"/>
+</kw>
+<kw name="select the link of child window">
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.blinkingText</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:50.277" level="INFO">Clicking element 'css:.blinkingText'.</msg>
+<status status="PASS" starttime="20220406 13:01:50.276" endtime="20220406 13:01:50.505"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>7s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220406 13:01:57.506" level="INFO">Slept 7 seconds</msg>
+<status status="PASS" starttime="20220406 13:01:50.505" endtime="20220406 13:01:57.507"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:50.275" endtime="20220406 13:01:57.507"/>
+</kw>
+<kw name="verify user is switched to new window">
+<kw name="Switch Window" library="Selenium2Library">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220406 13:01:57.508" endtime="20220406 13:01:57.531"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>xpath://*[@class='inner-box']/h1</arg>
+<arg>DOCUMENTS REQUEST</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220406 13:01:57.532" level="INFO">Verifying element 'xpath://*[@class='inner-box']/h1' contains exact text 'DOCUMENTS REQUEST'.</msg>
+<status status="PASS" starttime="20220406 13:01:57.531" endtime="20220406 13:01:57.667"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:57.507" endtime="20220406 13:01:57.668"/>
+</kw>
+<kw name="grab the email id in the child window">
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>css:.red</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:57.697" level="INFO">${text} = Please email us at mentor@rahulshettyacademy.com with below template to receive response</msg>
+<status status="PASS" starttime="20220406 13:01:57.669" endtime="20220406 13:01:57.697"/>
+</kw>
+<kw name="Return Email From Text" library="RSAcademyPageKey">
+<var>${email}</var>
+<arg>${text}</arg>
+<msg timestamp="20220406 13:01:57.698" level="INFO">${email} = mentor@rahulshettyacademy.com</msg>
+<status status="PASS" starttime="20220406 13:01:57.697" endtime="20220406 13:01:57.698"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${email}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220406 13:01:57.700" level="INFO">${email} = mentor@rahulshettyacademy.com</msg>
+<status status="PASS" starttime="20220406 13:01:57.699" endtime="20220406 13:01:57.700"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:57.669" endtime="20220406 13:01:57.700"/>
+</kw>
+<kw name="switch to parent window and enter email">
+<kw name="Switch Window" library="Selenium2Library">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220406 13:01:57.702" endtime="20220406 13:01:57.733"/>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>LoginPage Practise | Rahul Shetty Academy</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220406 13:01:57.831" level="INFO">Page title is 'LoginPage Practise | Rahul Shetty Academy'.</msg>
+<status status="PASS" starttime="20220406 13:01:57.734" endtime="20220406 13:01:57.831"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:username</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:57.832" level="INFO">Typing text 'mentor@rahulshettyacademy.com' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220406 13:01:57.831" endtime="20220406 13:01:58.178"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220406 13:02:03.179" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220406 13:01:58.178" endtime="20220406 13:02:03.179"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:57.701" endtime="20220406 13:02:03.180"/>
+</kw>
+<kw name="delete cookies and close all browser sessions" library="generic" type="TEARDOWN">
+<kw name="Delete All Cookies" library="Selenium2Library">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220406 13:02:03.181" endtime="20220406 13:02:03.220"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220406 13:02:03.220" endtime="20220406 13:02:03.331"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:03.180" endtime="20220406 13:02:03.331"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:41.134" endtime="20220406 13:02:03.331"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" starttime="20220406 13:01:40.694" endtime="20220406 13:02:03.333"/>
+</suite>
+<status status="PASS" starttime="20220406 13:01:40.691" endtime="20220406 13:02:03.336"/>
+</suite>
+<status status="PASS" starttime="20220406 13:01:40.663" endtime="20220406 13:02:03.338"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="UdemyRF">UdemyRF</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">UdemyRF.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="testDemo3">UdemyRF.Tests.testDemo3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

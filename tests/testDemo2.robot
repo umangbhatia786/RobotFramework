@@ -3,10 +3,12 @@
 Documentation   To validate the login form
 Library  Selenium2Library
 Library     BuiltIn
-Library     ../resources/keywords/UserKeywords.py
-Resource    generic.robot
-Test Teardown   demo_resource.delete cookies and close all browser sessions
-Test Setup   demo_resource.open the browser with Mortage Payment URL
+Library     ../resources/keywords/ShopPageKey.py
+Resource    ../PO/generic.robot
+Resource    ../PO/LandingPage.robot
+Resource    ../PO/ShopPage.robot
+Test Teardown   generic.delete cookies and close all browser sessions
+Test Setup   generic.open the browser with Mortage Payment URL
 
 *** Variables ***
 
@@ -32,7 +34,7 @@ Test Setup   demo_resource.open the browser with Mortage Payment URL
 
 Validate cards display in Shopping Page
     fill the login form     ${USERNAME}     ${VALID PASSWORD}
-    wait for element to be visible      ${CHECKOUT_LOCATOR}
+    wait for element to be visible
     verify card titles on shop page
     add items to cart and checkout  ${listOfProducts}
     sleep   5s

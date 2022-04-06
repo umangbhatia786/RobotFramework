@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.9 on darwin)" generated="20220406 13:01:40.656" rpa="false" schemaversion="3">
+<suite id="s1" name="UdemyRF" source="/Users/ubhatia/PycharmProjects/UdemyRF">
+<suite id="s1-s1" name="Tests" source="/Users/ubhatia/PycharmProjects/UdemyRF/tests">
+<suite id="s1-s1-s1" name="testDemo5" source="/Users/ubhatia/PycharmProjects/UdemyRF/tests/testDemo5.robot">
+<test id="s1-s1-s1-t1" name="Invalid Username" line="19">
+<kw name="open the browser with Mortage Payment URL" type="SETUP">
+<kw name="Create Webdriver" library="Selenium2Library">
+<arg>${BROWSER}</arg>
+<arg>executable_path=/Users/ubhatia/PycharmProjects/UdemyRF/resources/drivers/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 13:01:41.161" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 13:01:41.160" endtime="20220406 13:01:46.834"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 13:01:46.836" level="INFO">Opening url 'https://www.rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20220406 13:01:46.835" endtime="20220406 13:01:50.255"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 13:01:50.256" endtime="20220406 13:01:50.601"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220406 13:01:50.602" endtime="20220406 13:01:50.605"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:41.159" endtime="20220406 13:01:50.605"/>
+</kw>
+<kw name="Validate unsuccessful Login">
+<arg>abcd</arg>
+<arg>learning</arg>
+<kw name="fill the login form">
+<arg>${user}</arg>
+<arg>${pwd}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:50.610" level="INFO">Typing text 'abcd' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220406 13:01:50.609" endtime="20220406 13:01:50.813"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:50.814" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220406 13:01:50.994" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220406 13:01:51.066" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220406 13:01:50.813" endtime="20220406 13:01:51.067"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id:terms</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:51.068" level="INFO">Clicking element 'id:terms'.</msg>
+<status status="PASS" starttime="20220406 13:01:51.067" endtime="20220406 13:01:51.526"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:51.527" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20220406 13:01:51.527" endtime="20220406 13:01:51.651"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:50.607" endtime="20220406 13:01:51.652"/>
+</kw>
+<kw name="wait until it checks and displays error message">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 13:01:51.653" endtime="20220406 13:01:53.717"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:51.652" endtime="20220406 13:01:53.717"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Get Text" library="Selenium2Library">
+<var>${ERROR MESSAGE}</var>
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:01:53.741" level="INFO">${ERROR MESSAGE} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20220406 13:01:53.719" endtime="20220406 13:01:53.741"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220406 13:01:53.742" level="INFO">Verifying element 'css:.alert-danger' contains exact text 'Incorrect username/password.'.</msg>
+<status status="PASS" starttime="20220406 13:01:53.741" endtime="20220406 13:01:53.758"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:53.718" endtime="20220406 13:01:53.759"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:50.606" endtime="20220406 13:01:53.760"/>
+</kw>
+<kw name="delete cookies and close all browser sessions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="Selenium2Library">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220406 13:01:53.761" endtime="20220406 13:01:53.768"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220406 13:01:53.768" endtime="20220406 13:01:54.079"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:53.760" endtime="20220406 13:01:54.080"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:41.156" endtime="20220406 13:01:54.080"/>
+</test>
+<test id="s1-s1-s1-t2" name="Invalid Password" line="19">
+<kw name="open the browser with Mortage Payment URL" type="SETUP">
+<kw name="Create Webdriver" library="Selenium2Library">
+<arg>${BROWSER}</arg>
+<arg>executable_path=/Users/ubhatia/PycharmProjects/UdemyRF/resources/drivers/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 13:01:54.127" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 13:01:54.126" endtime="20220406 13:01:58.140"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 13:01:58.143" level="INFO">Opening url 'https://www.rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20220406 13:01:58.142" endtime="20220406 13:01:59.689"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 13:01:59.689" endtime="20220406 13:02:00.197"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220406 13:02:00.198" endtime="20220406 13:02:00.200"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:54.125" endtime="20220406 13:02:00.200"/>
+</kw>
+<kw name="Validate unsuccessful Login">
+<arg>rahulshettyacademy</arg>
+<arg>pqrst</arg>
+<kw name="fill the login form">
+<arg>${user}</arg>
+<arg>${pwd}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:00.203" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220406 13:02:00.202" endtime="20220406 13:02:00.375"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:00.377" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220406 13:02:00.412" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220406 13:02:00.455" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220406 13:02:00.376" endtime="20220406 13:02:00.455"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id:terms</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:00.455" level="INFO">Clicking element 'id:terms'.</msg>
+<status status="PASS" starttime="20220406 13:02:00.455" endtime="20220406 13:02:00.501"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:00.502" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20220406 13:02:00.501" endtime="20220406 13:02:00.579"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:00.201" endtime="20220406 13:02:00.580"/>
+</kw>
+<kw name="wait until it checks and displays error message">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 13:02:00.580" endtime="20220406 13:02:02.773"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:00.580" endtime="20220406 13:02:02.774"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Get Text" library="Selenium2Library">
+<var>${ERROR MESSAGE}</var>
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:02.793" level="INFO">${ERROR MESSAGE} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20220406 13:02:02.775" endtime="20220406 13:02:02.793"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220406 13:02:02.794" level="INFO">Verifying element 'css:.alert-danger' contains exact text 'Incorrect username/password.'.</msg>
+<status status="PASS" starttime="20220406 13:02:02.794" endtime="20220406 13:02:02.806"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:02.774" endtime="20220406 13:02:02.806"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:00.201" endtime="20220406 13:02:02.806"/>
+</kw>
+<kw name="delete cookies and close all browser sessions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="Selenium2Library">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220406 13:02:02.808" endtime="20220406 13:02:02.812"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220406 13:02:02.812" endtime="20220406 13:02:02.904"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:02.807" endtime="20220406 13:02:02.905"/>
+</kw>
+<status status="PASS" starttime="20220406 13:01:54.103" endtime="20220406 13:02:02.905"/>
+</test>
+<test id="s1-s1-s1-t3" name="Invalid Username and Password" line="19">
+<kw name="open the browser with Mortage Payment URL" type="SETUP">
+<kw name="Create Webdriver" library="Selenium2Library">
+<arg>${BROWSER}</arg>
+<arg>executable_path=/Users/ubhatia/PycharmProjects/UdemyRF/resources/drivers/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 13:02:02.911" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 13:02:02.910" endtime="20220406 13:02:06.130"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 13:02:06.133" level="INFO">Opening url 'https://www.rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20220406 13:02:06.132" endtime="20220406 13:02:07.216"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 13:02:07.216" endtime="20220406 13:02:07.388"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220406 13:02:07.388" endtime="20220406 13:02:07.390"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:02.909" endtime="20220406 13:02:07.391"/>
+</kw>
+<kw name="Validate unsuccessful Login">
+<arg>dwvfwrf</arg>
+<arg>betbeev</arg>
+<kw name="fill the login form">
+<arg>${user}</arg>
+<arg>${pwd}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:07.394" level="INFO">Typing text 'dwvfwrf' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220406 13:02:07.393" endtime="20220406 13:02:07.552"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:07.553" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220406 13:02:07.597" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220406 13:02:07.656" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220406 13:02:07.552" endtime="20220406 13:02:07.656"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id:terms</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:07.657" level="INFO">Clicking element 'id:terms'.</msg>
+<status status="PASS" starttime="20220406 13:02:07.656" endtime="20220406 13:02:07.740"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:07.741" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20220406 13:02:07.740" endtime="20220406 13:02:07.801"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:07.392" endtime="20220406 13:02:07.801"/>
+</kw>
+<kw name="wait until it checks and displays error message">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 13:02:07.802" endtime="20220406 13:02:10.003"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:07.801" endtime="20220406 13:02:10.004"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Get Text" library="Selenium2Library">
+<var>${ERROR MESSAGE}</var>
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220406 13:02:10.021" level="INFO">${ERROR MESSAGE} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20220406 13:02:10.005" endtime="20220406 13:02:10.021"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220406 13:02:10.022" level="INFO">Verifying element 'css:.alert-danger' contains exact text 'Incorrect username/password.'.</msg>
+<status status="PASS" starttime="20220406 13:02:10.022" endtime="20220406 13:02:10.033"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:10.004" endtime="20220406 13:02:10.033"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:07.391" endtime="20220406 13:02:10.034"/>
+</kw>
+<kw name="delete cookies and close all browser sessions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="Selenium2Library">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220406 13:02:10.035" endtime="20220406 13:02:10.038"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220406 13:02:10.039" endtime="20220406 13:02:10.112"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:10.034" endtime="20220406 13:02:10.112"/>
+</kw>
+<status status="PASS" starttime="20220406 13:02:02.906" endtime="20220406 13:02:10.113"/>
+</test>
+<doc>Parametrization in Robot framework</doc>
+<status status="PASS" starttime="20220406 13:01:40.697" endtime="20220406 13:02:10.114"/>
+</suite>
+<status status="PASS" starttime="20220406 13:01:40.694" endtime="20220406 13:02:10.116"/>
+</suite>
+<status status="PASS" starttime="20220406 13:01:40.665" endtime="20220406 13:02:10.118"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="UdemyRF">UdemyRF</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Tests">UdemyRF.Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1-s1" name="testDemo5">UdemyRF.Tests.testDemo5</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

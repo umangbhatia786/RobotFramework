@@ -3,10 +3,10 @@
 Documentation   To validate the login form
 Library  Selenium2Library
 Library     BuiltIn
-Library     ../resources/keywords/UserKeywords.py
-Resource    generic.robot
-Test Teardown   demo_resource.delete cookies and close all browser sessions
-Test Setup   demo_resource.open the browser with Mortage Payment URL
+Library     ../resources/keywords/RSAcademyPageKey.py
+Resource    ../PO/generic.robot
+Test Teardown   generic.delete cookies and close all browser sessions
+Test Setup   generic.open the browser with Mortage Payment URL
 
 *** Test Cases ***
 
