@@ -16,10 +16,11 @@ Test Setup   generic.open the browser with Mortage Payment URL
 
 *** Test Cases ***
 
-#Validate unsuccessful Login
-#    fill the login form     ${USERNAME}     ${INVALID PASSWORD}
-#    wait for element to be visible      ${ERROR_MESSAGE_LOCATOR}
-#    verify error message is correct
+Validate unsuccessful Login
+    [Tags]      SMOKE
+    fill the login form     ${USERNAME}     ${INVALID PASSWORD}
+    wait until element is visible   ${ERROR_MESSAGE_LOCATOR}
+    verify error message is correct
 
 
 #Validate cards display in Shopping Page

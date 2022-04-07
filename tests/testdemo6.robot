@@ -20,6 +20,7 @@ ${country}  India
 *** Test Cases ***
 
 Place order for multiple items
+    [Tags]      REGRESSION
     LandingPage.fill the form and login with    User    ${USERNAME}     ${VALID PASSWORD}   Teacher
     ShopPage.wait for element to be visible
     ShopPage.verify card titles on shop page

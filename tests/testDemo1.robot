@@ -15,6 +15,7 @@ ${ERROR_MESSAGE_LOCATOR}    css:.alert-danger
 *** Test Cases ***
 
 Validate successful Login
+    [Tags]      SMOKE
     fill the login form
     wait until it checks and displays error message
     verify error message is correct
